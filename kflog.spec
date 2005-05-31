@@ -1,14 +1,19 @@
-# TODO: Needs fixing placement of kde files (desktop icons etc ..)
+# TODO: 
+# - Check placement of kde files (desktop icons etc ..)
+# - Add some *.kfl files (seem to be obsolete to 90's :(
+
 Summary:	KFLog is flight logger program aimed at glider pilots
-Summary(pl):	KFLog jest programem logowania lotu dla pilotów szybowców
+Summary(pl):	KFLog jest programem logowania lotu dla pilotï¿½ szybowcï¿½
 Name:		kflog
 Version:	2.1.1
-Release:	0.1
+Release:	0.2
 License:	GNU
 Group:		TODO
 ######		Unknown group!
 Source0:	http://www.kflog.org/fileadmin/user_upload/kflog_downloads/src/%{name}-%{version}.tar.bz2
-# Source0-md5:
+# Source0-md5:	266b9f8d4551b9926d9848fb0f28139e
+# http://www.kflog.org/mapdata/data/airspace/Poland.kfl
+
 URL:		http://www.kflog.org/kflog/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -27,13 +32,13 @@ airfields and airspaces, but a complete elevation-map, roads, cities,
 rivers, and lots of other interesting objects.
 
 %description -l pl
-KFLog jest opensource'owym programem przeznaczonym dla pilotów
-szybowców. Daje pote¿ne narzêdzie do planowania lotu prze lotem
-oraz analizy lotu ju¿ po. KFLog jest jedynym analizatorem lotu
-dostêpnym dla Linuxa rozpoznawanym przez FAI IGC. KFLog prezentuje
-lot na cyfrowej mapie, które zawiera nie tylko lotniska i strefy
-przestrzeni lotniczej, ale tak¿e kompletn± mape wysoko¶ciow±,
-drogi, miasta, rzeki oraz sporo innych interesuj±cych obiektów.
+KFLog jest opensource'owym programem przeznaczonym dla pilotï¿½
+szybowcï¿½. Daje potene narzï¿½zie do planowania lotu prze lotem
+oraz analizy lotu ju po. KFLog jest jedynym analizatorem lotu
+dostï¿½nym dla Linuxa rozpoznawanym przez FAI IGC. KFLog prezentuje
+lot na cyfrowej mapie, ktï¿½e zawiera nie tylko lotniska i strefy
+przestrzeni lotniczej, ale take kompletn mape wysokociow,
+drogi, miasta, rzeki oraz sporo innych interesujcych obiektï¿½.
 
 %prep
 #setup -q -n %{name}
@@ -61,17 +66,27 @@ install -d $RPM_BUILD_ROOT{%{_pixmapsdir},%{_desktopdir}}
 	kde_htmldir=%{_kdedocdir} \
 	kde_libs_htmldir=%{_kdedocdir} \
 	kdelnkdir=%{_desktopdir} \
+	
+mv -f $RPM_BUILD_ROOT%{_datadir}/applnk/Applications/%{name}.desktop \
+	$RPM_BUILD_ROOT%{_desktopdir}/%{name}.desktop
 
 %find_lang %{name} --with-kde
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post   -p /sbin/ldconfig
+%postun -p /sbin/ldconfig
+
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_libdir}/*.so.*.*.*
+%{_libdir}/*.la
+
 #%{_pixmapsdir}/*
-#%{_desktopdir}/*
-%{_iconsdir}/*/*/apps/%{name}.png
+%{_desktopdir}/*
 #%{_datadir}/mimelnk/application/*
 %{_datadir}/apps/%{name}
+%{_iconsdir}/hicolor/*/*/*.png
+#%{_iconsdir}/*/*/apps/%{name}.png
