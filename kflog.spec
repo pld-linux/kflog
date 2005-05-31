@@ -2,18 +2,16 @@
 # - Check placement of kde files (desktop icons etc ..)
 # - Add some *.kfl files (seem to be obsolete to 90's :(
 
-Summary:	KFLog is flight logger program aimed at glider pilots
-Summary(pl):	KFLog jest programem logowania lotu dla pilotï¿½ szybowcï¿½
+Summary:	KFLog - flight logger program aimed at glider pilots
+Summary(pl):	KFLog - program logowania lotu dla pilotów szybowców
 Name:		kflog
 Version:	2.1.1
 Release:	0.2
 License:	GNU
-Group:		TODO
-######		Unknown group!
+Group:		X11/Applications
 Source0:	http://www.kflog.org/fileadmin/user_upload/kflog_downloads/src/%{name}-%{version}.tar.bz2
 # Source0-md5:	266b9f8d4551b9926d9848fb0f28139e
 # http://www.kflog.org/mapdata/data/airspace/Poland.kfl
-
 URL:		http://www.kflog.org/kflog/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -32,21 +30,19 @@ airfields and airspaces, but a complete elevation-map, roads, cities,
 rivers, and lots of other interesting objects.
 
 %description -l pl
-KFLog jest opensource'owym programem przeznaczonym dla pilotï¿½
-szybowcï¿½. Daje potene narzï¿½zie do planowania lotu prze lotem
-oraz analizy lotu ju po. KFLog jest jedynym analizatorem lotu
-dostï¿½nym dla Linuxa rozpoznawanym przez FAI IGC. KFLog prezentuje
-lot na cyfrowej mapie, ktï¿½e zawiera nie tylko lotniska i strefy
-przestrzeni lotniczej, ale take kompletn mape wysokociow,
-drogi, miasta, rzeki oraz sporo innych interesujcych obiektï¿½.
+KFLog jest programem z otwartymi ¼ród³ami przeznaczonym dla pilotów
+szybowców. Daje potê¿ne narzêdzie do planowania lotu przed lotem
+oraz analizy lotu ju¿ po nim. KFLog jest jedynym analizatorem lotu
+dostêpnym dla Linuksa rozpoznawanym przez FAI IGC. KFLog prezentuje
+lot na cyfrowej mapie, która zawiera nie tylko lotniska i strefy
+przestrzeni lotniczej, ale tak¿e kompletn± mapê wysoko¶ciow±,
+drogi, miasta, rzeki oraz sporo innych interesuj±cych obiektów.
 
 %prep
-#setup -q -n %{name}
 %setup -q
 
 %build
 cp -f %{_datadir}/automake/config.sub admin
-#export PATH=/usr/share/unsermake:$PATH
 %{__make} -f admin/Makefile.common cvs
 
 %configure \
@@ -83,10 +79,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/*.so.*.*.*
 %{_libdir}/*.la
-
-#%{_pixmapsdir}/*
-%{_desktopdir}/*
-#%{_datadir}/mimelnk/application/*
 %{_datadir}/apps/%{name}
+%{_desktopdir}/*
 %{_iconsdir}/hicolor/*/*/*.png
-#%{_iconsdir}/*/*/apps/%{name}.png
