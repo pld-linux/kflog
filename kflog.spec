@@ -1,6 +1,6 @@
-# TODO: 
+# TODO:
 # - Check placement of kde files (desktop icons etc ..)
-# - Add some *.kfl files (seem to be obsolete to 90's :(
+# - Add some *.kfl files (seem to be obsolete to 90's:(
 
 Summary:	KFLog - flight logger program aimed at glider pilots
 Summary(pl):	KFLog - program logowania lotu dla pilotów szybowców
@@ -62,7 +62,7 @@ install -d $RPM_BUILD_ROOT{%{_pixmapsdir},%{_desktopdir}}
 	kde_htmldir=%{_kdedocdir} \
 	kde_libs_htmldir=%{_kdedocdir} \
 	kdelnkdir=%{_desktopdir} \
-	
+
 mv -f $RPM_BUILD_ROOT%{_datadir}/applnk/Applications/%{name}.desktop \
 	$RPM_BUILD_ROOT%{_desktopdir}/%{name}.desktop
 
