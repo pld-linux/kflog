@@ -80,5 +80,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/*.so.*.*.*
 %{_libdir}/*.la
 %{_datadir}/apps/%{name}
-%{_desktopdir}/*
+%{_desktopdir}/*.desktop
 %{_iconsdir}/hicolor/*/*/*.png
