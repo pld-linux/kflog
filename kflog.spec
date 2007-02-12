@@ -3,7 +3,7 @@
 # - Add some *.kfl files (seem to be obsolete to 90's:(
 
 Summary:	KFLog - flight logger program aimed at glider pilots
-Summary(pl):	KFLog - program logowania lotu dla pilotów szybowców
+Summary(pl.UTF-8):   KFLog - program logowania lotu dla pilotÃ³w szybowcÃ³w
 Name:		kflog
 Version:	2.1.1
 Release:	0.2
@@ -29,14 +29,14 @@ projects the flights on a digital vectormap, that contains not only
 airfields and airspaces, but a complete elevation-map, roads, cities,
 rivers, and lots of other interesting objects.
 
-%description -l pl
-KFLog jest programem z otwartymi ¼ród³ami przeznaczonym dla pilotów
-szybowców. Daje potê¿ne narzêdzie do planowania lotu przed lotem
-oraz analizy lotu ju¿ po nim. KFLog jest jedynym analizatorem lotu
-dostêpnym dla Linuksa rozpoznawanym przez FAI IGC. KFLog prezentuje
-lot na cyfrowej mapie, która zawiera nie tylko lotniska i strefy
-przestrzeni lotniczej, ale tak¿e kompletn± mapê wysoko¶ciow±,
-drogi, miasta, rzeki oraz sporo innych interesuj±cych obiektów.
+%description -l pl.UTF-8
+KFLog jest programem z otwartymi ÅºrÃ³dÅ‚ami przeznaczonym dla pilotÃ³w
+szybowcÃ³w. Daje potÄ™Å¼ne narzÄ™dzie do planowania lotu przed lotem
+oraz analizy lotu juÅ¼ po nim. KFLog jest jedynym analizatorem lotu
+dostÄ™pnym dla Linuksa rozpoznawanym przez FAI IGC. KFLog prezentuje
+lot na cyfrowej mapie, ktÃ³ra zawiera nie tylko lotniska i strefy
+przestrzeni lotniczej, ale takÅ¼e kompletnÄ… mapÄ™ wysokoÅ›ciowÄ…,
+drogi, miasta, rzeki oraz sporo innych interesujÄ…cych obiektÃ³w.
 
 %prep
 %setup -q
