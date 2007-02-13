@@ -3,7 +3,7 @@
 # - Add some *.kfl files (seem to be obsolete to 90's:(
 
 Summary:	KFLog - flight logger program aimed at glider pilots
-Summary(pl.UTF-8):   KFLog - program logowania lotu dla pilotów szybowców
+Summary(pl.UTF-8):	KFLog - program logowania lotu dla pilotów szybowców
 Name:		kflog
 Version:	2.1.1
 Release:	0.2
